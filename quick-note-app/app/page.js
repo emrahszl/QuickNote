@@ -32,7 +32,7 @@ export default function Home() {
     axios.post(apiUrl, newNote).then(function (response) {
       setNotes([...notes, response.data]);
       setSelectedNote(response.data);
-      toast("New note created.")
+      toast("New note created.");
     });
   };
 
@@ -40,7 +40,7 @@ export default function Home() {
     axios.delete(apiUrl + "/" + selectedNote.id).then(function (response) {
       setNotes(notes.filter(n => n.id != selectedNote.id));
       setSelectedNote(null);
-      toast("Note deleted.")
+      toast("Note deleted.");
     });
   };
 
@@ -50,7 +50,7 @@ export default function Home() {
       let i = notes.findIndex(n => n.id == selectedNote.id);
       newNotes[i] = selectedNote;
       setNotes(newNotes);
-      toast("Note saved.")
+      toast("Note saved.");
     });
   };
 
